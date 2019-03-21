@@ -34,7 +34,7 @@ void shell_loop(void)
         size_t len = 0;
         int count = 0;
 
-        // catch signal and display prompt for use input 
+        // catch signal and display prompt for user input 
         signal(SIGINT, signal_handler);
         console_prompt();
         signal(SIGINT, signal_handler);
@@ -58,10 +58,6 @@ void shell_loop(void)
     }
 
     } while (status);
-
-
-
-
 
     exitMessage();
 }
