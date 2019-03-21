@@ -17,7 +17,6 @@
 #include <fcntl.h>
 #include "functions.h"
 #include <dirent.h>
-
 #define BUFFSIZE 1024
 #define size 100
 
@@ -68,10 +67,8 @@ void signal_handler(int signo)
 {
     // catches ( Ctrl + C ) / ( Ctrl + D )
     signal(signo, signal_handler);
-
     console_prompt(); // call prompt() again
-
-    fflush(stdout); // flush stdout 
+    fflush(stdout); // flush stdout
 }
 
 /**
@@ -95,10 +92,10 @@ void console_prompt()
     printf("\n%s # ", buff);
 }
 
-
 /**
  * prints exit message 
  */
-void exitMessage(){
-    printf("\nProgram terminated.\n"); 
+void exitMessage()
+{
+    printf("\nProgram terminated.\n");
 }
