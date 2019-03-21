@@ -102,7 +102,6 @@ int redirection(char **arguments, char *fileName, int count)
         execvp(arguments[0], arguments);
 
         close(fd); // close file descriptor
-        //close(fd2);
     }
 
     else
