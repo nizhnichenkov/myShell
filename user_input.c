@@ -100,5 +100,5 @@ void console_prompt()
  * prints exit message 
  */
 void exitMessage(){
-    printf("Program terminated.\n"); 
+    printf("\nProgram terminated.\n"); 
 }

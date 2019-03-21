@@ -28,12 +28,13 @@ void shell_loop(void)
 
     do
     {
-        int exitStatus; 
+        int exitStatus = 0; 
         char *line = NULL;
         char **arguments = malloc(BUFFSIZE * sizeof(char *));
         size_t len = 0;
         int count = 0;
 
+        // catch signal and display prompt for use input 
         signal(SIGINT, signal_handler);
         console_prompt();
         signal(SIGINT, signal_handler);
