@@ -18,7 +18,6 @@
 #include <dirent.h>
 #include "functions.h"
 #define BUFFSIZE 1024
-#define size 50
 
 /**
  * creates child processes and executes 

@@ -17,7 +17,6 @@
 #include <fcntl.h>
 #include "functions.h"
 #define BUFFSIZE 1024
-#define size 50
 
 int decider(char **arguments, int count)
 {

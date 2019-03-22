@@ -18,7 +18,6 @@
 #include "functions.h"
 #include <dirent.h>
 #define BUFFSIZE 1024
-#define size 100
 
 // /**
 //  * function to trim trailing '\n'
@@ -51,7 +50,6 @@ void split(char *userInput, char **arguments, int *count)
         arguments[i] = temp;
         trim(arguments[i]);
         i++;
-        //arguments = realloc(arguments, BUFFSIZE * sizeof(char *));
         temp = strtok(NULL, " ");
     }
 
@@ -78,7 +76,7 @@ void signal_handler(int signo)
  */
 void console_prompt()
 {
-    char buff[size];
+    char buff[100];
 
     time_t t = time(0);
 
@@ -88,7 +86,7 @@ void console_prompt()
 
     tmp = localtime(&t);
 
-    strftime(buff, size, "[%d/%m %H:%M]", tmp);
+    strftime(buff, 100, "[%d/%m %H:%M]", tmp);
     printf("\n%s # ", buff);
 }
 

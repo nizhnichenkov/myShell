@@ -18,7 +18,6 @@
 #include <dirent.h>
 #include "functions.h"
 #define BUFFSIZE 1024
-#define size 50
 
 // shell
 void shell_loop(void)
@@ -54,7 +53,6 @@ void shell_loop(void)
         // decides which function to call
         // depending on arguments passed
         status = decider(arguments, count);
-
     }
 
     } while (status);
