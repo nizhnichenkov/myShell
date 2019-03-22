@@ -53,6 +53,7 @@ void shell_loop(void)
         // decides which function to call
         // depending on arguments passed
         status = decider(arguments, count);
+
     }
 
     } while (status);

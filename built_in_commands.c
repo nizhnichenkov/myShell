@@ -63,7 +63,7 @@ int redirection(char **arguments, char *fileName, int count)
 
     else if (pid == 0)
     {
-        int fd, fd2;
+        int fd;
         int ret;
 
         // store file name

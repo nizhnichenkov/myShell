@@ -4,6 +4,20 @@
  * @email           svetoslav.nizhnichenkov@ucdconnect.ie
  * 
  */
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <string.h>
+#include <ctype.h>
+#include <signal.h>
+#include <time.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <dirent.h>
+#define BUFFSIZE 1024
+
 // remove newline character
 void trim(char *s);
 

@@ -45,10 +45,14 @@ int use_fork(char **args)
     }
 
     else
-    {
+    {   // catch signal 
+        signal(SIGINT, signal_handler);
         // parent waits until child completes
-        waitpid(pid, &status, 0);
+        wait(&status);
+
+        signal(SIGINT, signal_handler);
     }
 
+    
     return 1;
 }

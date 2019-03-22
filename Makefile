@@ -28,4 +28,4 @@ user_input.o: user_input.c functions.h
 
 
 clean: 
-	$(RM) rectangle *.o *~
+	$(RM) myshell *.o *~
