@@ -70,8 +70,6 @@ int redirection(char **arguments, char *fileName, int count)
         // store file name
         char *file = fileName;
 
-        printf("File name : %s\n", file);
-
         // open a file for reading/writing
         fd = open(file, O_CREAT | O_WRONLY | O_TRUNC, 0666);
 
