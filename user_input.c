@@ -1,8 +1,8 @@
 /**
- * @author          Svetoslav Nizhnichenkov 
+ * @author          Svetoslav Nizhnichenkov
  * @StudentID       17712081
  * @email           svetoslav.nizhnichenkov@ucdconnect.ie
- * 
+ *
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -57,9 +57,9 @@ void split(char *userInput, char **arguments, int *count)
 }
 
 /**
- * signal handler : 
+ * signal handler :
  * catches whenever ( Ctrl + C ) / ( Ctrl + D ) is eneted
- * and does appropriate action 
+ * and does appropriate action
  */
 void signal_handler(int signo)
 {
@@ -71,7 +71,7 @@ void signal_handler(int signo)
 
 /**
  * function that gets local date and time
- * and saves it in a character array 
+ * and saves it in a character array
  * that is passed back to the caller
  */
 void console_prompt()
@@ -91,9 +91,9 @@ void console_prompt()
 }
 
 /**
- * prints exit message 
+ * prints exit message
  */
 void exitMessage()
 {
-    printf("\nProgram terminated.\n");
+    printf("\nShell terminated.\n");
 }

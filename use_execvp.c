@@ -1,8 +1,8 @@
 /**
- * @author          Svetoslav Nizhnichenkov 
+ * @author          Svetoslav Nizhnichenkov
  * @StudentID       17712081
  * @email           svetoslav.nizhnichenkov@ucdconnect.ie
- * 
+ *
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,7 +20,7 @@
 #define BUFFSIZE 1024
 
 /**
- * creates child processes and executes 
+ * creates child processes and executes
  * commands such as : pwd, ls, cat, etc.
  * using " execvp() "
  */
@@ -30,22 +30,26 @@ int use_fork(char **args)
     pid_t pid = fork(); // create a new process
     int status;
 
-    if (pid == -1) // if forking was unsuccessful 
+    if (pid == -1) // if forking was unsuccessful
     {
         printf("Forking failed\n");
     }
 
-    else if (pid == 0) 
+    else if (pid == 0)
     {
-        // execute command 
+
+
+        // execute command
         if (execvp(args[0], args) == -1)
         {
+            signal(SIGINT, SIG_DFL); // set signal to default
             printf("shell: command not found: %s\n", args[0]);
+            exit(EXIT_FAILURE); // exit child process
         }
     }
 
     else
-    {   // catch signal 
+    {   // catch signal
         signal(SIGINT, signal_handler);
         // parent waits until child completes
         wait(&status);
@@ -53,6 +57,6 @@ int use_fork(char **args)
         signal(SIGINT, signal_handler);
     }
 
-    
+
     return 1;
 }

@@ -1,8 +1,8 @@
 /**
- * @author          Svetoslav Nizhnichenkov 
+ * @author          Svetoslav Nizhnichenkov
  * @StudentID       17712081
  * @email           svetoslav.nizhnichenkov@ucdconnect.ie
- * 
+ *
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,6 +16,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <dirent.h>
+#include <setjmp.h>
 #include "functions.h"
 #define BUFFSIZE 1024
 
@@ -27,16 +28,17 @@ void shell_loop(void)
 
     do
     {
-        int exitStatus = 0; 
+        int exitStatus = 0;
         char *line = NULL;
         char **arguments = malloc(BUFFSIZE * sizeof(char *));
         size_t len = 0;
         int count = 0;
 
-        // catch signal and display prompt for user input 
+        // catch signal and display prompt for user input
         signal(SIGINT, signal_handler);
         console_prompt();
         signal(SIGINT, signal_handler);
+
 
         exitStatus = getline(&line, &len, stdin); // get command entered by user
 

@@ -1,8 +1,8 @@
 /**
- * @author          Svetoslav Nizhnichenkov 
+ * @author          Svetoslav Nizhnichenkov
  * @StudentID       17712081
  * @email           svetoslav.nizhnichenkov@ucdconnect.ie
- * 
+ *
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -24,6 +24,6 @@ int main(int argc, char **argv)
 {
     // call shell
     shell_loop();
-	
+
     return EXIT_SUCCESS;
 }
